@@ -32,11 +32,11 @@ jobs:
           path: ~/rails-felmy-app03
       - ruby/install-deps
       - run:
-          name: Database setup
-          command: bundle exec rails db:migrate
-      - run:
           name: bundle install
           command: bundle install
+      - run:
+          name: Database setup
+          command: bundle exec rails db:migrate
       - run:
           name: test
           command: bundle exec rake test
