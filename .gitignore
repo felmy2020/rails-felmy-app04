@@ -35,5 +35,6 @@ src/yarn-error.log
 src/yarn-debug.log*
 src/.yarn-integrity
 
+# 追記：docker環境のため、以下を除外
 src/db/mysql_data
 src/tmp/pids/server.pid
