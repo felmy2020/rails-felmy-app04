@@ -1,0 +1,17 @@
+{
+  "name": "rails-felmy-app03",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+  ],
+  "service": "web",
+  "workspaceFolder": "/app",
+  "forwardPorts": [
+    9003
+  ],
+  "extensions": [
+    "bmewburn.vscode-intelephense-client",
+    "coenraads.bracket-pair-colorizer-2",
+    "oderwat.indent-rainbow",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
