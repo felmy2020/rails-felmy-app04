@@ -11,6 +11,13 @@ COPY ./src /app
 RUN bundle config --local set path 'vendor/bundle' \
   && bundle install
 
+# Bootstrap5の導入
+# && yarn add bootstrap@5.1.3 \
+# && yarn add @popperjs/core
+
+# Font Awesome の導入
+# yarn add @fortawesome/fontawesome-free
+
 COPY start.sh /start.sh
 RUN chmod 744 /start.sh
 CMD ["sh", "/start.sh"]
