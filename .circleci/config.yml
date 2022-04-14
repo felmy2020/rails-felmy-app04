@@ -6,16 +6,16 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.7
-    working_directory: ~/rails-felmy-app03/src
+      - image: cimg/ruby:2.7.5
+    working_directory: ~/rails-felmy-app04/src
     steps:
       - checkout:
-          path: ~/rails-felmy-app03
+          path: ~/rails-felmy-app04
       - ruby/install-deps
 
   test:
     docker:
-      - image: cimg/ruby:2.7
+      - image: cimg/ruby:2.7.5
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -26,10 +26,10 @@ jobs:
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
-    working_directory: ~/rails-felmy-app03/src
+    working_directory: ~/rails-felmy-app04/src
     steps:
       - checkout:
-          path: ~/rails-felmy-app03
+          path: ~/rails-felmy-app04
       - ruby/install-deps
       - run:
           name: Database setup
@@ -40,7 +40,7 @@ jobs:
 
   deploy:
     docker:
-      - image: cimg/ruby:2.7
+      - image: cimg/ruby:2.7.5
     steps:
       - checkout
       - setup_remote_docker:
